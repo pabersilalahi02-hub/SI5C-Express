@@ -1,0 +1,5 @@
+$kind: http-request
+name: GET Satu Mahasiswa Parameter
+url: ""
+method: GET
+order: 2000
