@@ -1,5 +1,0 @@
-$kind: http-request
-name: GET Satu Mahasiswa Querry
-url: ""
-method: GET
-order: 6000

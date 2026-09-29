@@ -1,8 +1,0 @@
-$kind: http-request
-name: POST Mahasiswa
-url: http://localhost:3000/mahasiswa
-method: POST
-body:
-  type: json
-  content: '{"nama" : "Joel Purba ", "jurusan": "Informatika"}'
-order: 3000
