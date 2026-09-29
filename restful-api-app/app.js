@@ -2,6 +2,7 @@ const express = require("express"); // impor express
 const app = express(); //instalansi
 const PORT = 3000; //PORT yg akan digunakan
 app.use(express.json());
+const router = express.Router();
 
 // Data sementara (disimpan di memori, hilang saat server restart)
 let mahasiswa = [
@@ -39,7 +40,7 @@ app.get("/mahasiswa/:id", (req, res) => {
 // Menjalankan aplikasi pada port 3000
 // POST /mahasiswa
 // Body: { "nama": "Citra", "jurusan": "Sistem Informasi" }
-app.post('/mahasiswa', (req, res) => {
+app.post('/mahasiswa', cekApiKey, (req, res) => {
   const { nama, jurusan } = req.body;
 
   if (!nama || !jurusan) {
