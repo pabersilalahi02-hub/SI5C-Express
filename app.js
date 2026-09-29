@@ -106,7 +106,20 @@ app.delete("/mahasiswa/:id", cekApiKey,(req, res, next) => {
   res.status(204).send();
 });
 
+// Middleware untuk menangani error
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(err.status || 500).json({ message: err.message });
+});
+
+  // error handler : wajib 4 parameter
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(err.status || 500).json({ message: err.message });
+});
+
 // menjalankan aplikasi pada port 3000
 app.listen(PORT, () => {
   console.log(`Server berjalan di http://localhost:${PORT}`);
 });
+
